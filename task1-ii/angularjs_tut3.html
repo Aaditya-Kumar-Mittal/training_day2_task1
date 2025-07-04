@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My AngularJS App</title>
+
+</head>
+
+<body ng-app="myApp" ng-init="a=5;b=6;fname='Chandler';lname='Bing';">
+
+
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script type="text/javascript" src="./angularjs_tut2_app.js"></script>
+
+  <p>Area is : {{a*b}}</p>
+
+  <p>Area is : <span ng-bind="a*b"></span></p>
+
+  <br>
+
+  <h1>{{fname}} {{lname}}</h1>
+
+  <h1 ng-bind="fname + ' ' + lname"></h1>
+
+</body>
+
+</html>

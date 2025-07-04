@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+  </script>
+  <title>AngularJS Application</title>
+</head>
+
+<body ng-app="myApp">
+
+  <!-- View Part of the Application -->
+
+  <!-- ng-controller tells AngularJS which controller to use with this view. -->
+  <div>
+    <h1 ng-controller="helloController">
+      Welcome to the {{helloTo.title}} of AngularJS </h1>
+  </div>
+
+  <script>
+    var app = angular.module("myApp", []);
+
+    app.controller("helloController", function ($scope) {
+      $scope.helloTo = {
+        title: "World"
+      };
+    });
+  </script>
+</body>
+
+</html>

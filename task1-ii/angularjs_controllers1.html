@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AngularJS Controllers</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+  </script>
+</head>
+
+<body>
+
+  <h1>AngularJS Controllers</h1>
+
+
+  <div ng-app="myApp" ng-controller="studentController">
+
+    Enter your firstName : <input type="text" ng-model="student.firstName"><br>
+    Enter your lastName : <input type="text" ng-model="student.lastName"><br>
+    <br>
+
+    <p>Hello {{student.fullname()}}</p>
+
+    <br>
+
+    <p>Hello {{student.fullname() | uppercase}}</p>
+    <br>
+
+    <p>Hello {{student.fullname() | lowercase}}</p>
+    <br>
+
+    <p>Hello {{student.fullname() | uppercase}}</p>
+
+    <br>
+
+    <h1>{{student.fees | currency}}</h1>
+  </div>
+
+  <script>
+
+    var myApplication = angular.module("myApp", []);
+
+    myApplication.controller('studentController', function ($scope) {
+
+      $scope.student = {
+        firstName: "Aaditya",
+        lastName: "Mittal",
+        fees: 5000,
+
+        fullname: function () {
+          var studentObject = $scope.student;
+          return studentObject.firstName + " " + studentObject.lastName
+        }
+      }
+
+
+    })
+  </script>
+
+</body>
+
+</html>
